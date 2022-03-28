@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Employee Page</title>
+</head>
+<body>
+
+	<div class="mobile-container">
+		<div class="topnav">
+			<a href="index.html" class="active">banc</a>
+			<div id="myLinks">
+				<a href="index.html">Home</a> <a href="emp.html">Employee</a> <a
+					href="man.html">Manager</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+		<h1 style="text-align:center">Employee Page</h1>
+		<div class="container" id="formDiv" >
+			<br>
+			<button type="submit" class="btn btn-primary" onclick="createRemb()";>Submit
+				Request</button>
+			<br> <br>
+			<button type="submit" class="btn btn-primary" onclick="oldReq()";>View
+				Requests</button>
+			<br> <br>
+			<button type="submit" class="btn btn-primary" onclick="viewInfo()";>Edit
+				Info</button>
+			<br>
+			<button type="submit" class="btn btn-primary" onclick="logOut()";>Log
+				Out</button>
+			<br>
+		</div>
+
+	</div>
+
+	<script>
+		// Hamburger Function
+		function myFunction() {
+			var x = document.getElementById("myLinks");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+
+		//LogOut
+		function logOut() {
+
+			window.location = "index.html";
+		}
+
+		//Request page
+		function createRemb() {
+
+			window.location = "request.html";
+		}
+		
+		function oldReq() {
+			
+			window.location = "old.html";
+		}
+		
+		// View info
+		function viewInfo() {
+			
+			window.location = "view.html";
+		}
+
+	</script>
+
+</body>
+</html>

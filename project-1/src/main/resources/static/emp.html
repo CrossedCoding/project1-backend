@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Emp Login</title>
+</head>
+<body>
+
+	<div class="mobile-container">
+		<div class="topnav">
+			<a href="index.html" class="active">Banque</a>
+			<div id="myLinks">
+				<a href="index.html">Home</a> <a href="emp.html">Employee</a> <a
+					href="man.html">Manager</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		
+		<h1 style="text-align: center">Employee Login</h1>
+		<div class="login">
+		<label for="username">Employee Username:</label><br> <input
+			type="text" id="username" name="username" class="form-control"><br>
+		<label for="password">Employee Password:</label><br> <input
+			type="password" id="password" name="password" class="form-control"><br>
+		<button type="submit" class="btn btn-primary" onclick="loginEmp()">Submit</button>
+		<br>
+		</div>
+	</div>
+
+	<script>
+		
+	// Hamburger menu function
+	function myFunction() {
+			var x = document.getElementById("myLinks");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+		
+	// Login function
+	function loginEmp() {
+		
+		//gets the inputs from the employee's entry and assigns them to variables'
+		var username = document.getElementById("username").value;
+		
+		var password = document.getElementById("password").value;
+		
+		let data = {username: username, password: password};
+		
+		console.log(data);
+		
+		fetch("/users/login", {
+			 method: "POST",
+	  		headers: {'Content-Type': 'application/json'}, 
+	  		body: JSON.stringify(data)
+		}).then(res => {
+			
+			if(res.status !== 200) {
+				
+				//if login attempt fails
+				alert("Incorrect Login");
+				
+			}
+			
+			else {
+				
+				// Redirecting to other page.
+				window.location = "empPage.html"; 
+			}
+			
+		  console.log("Request complete! response:", res);
+		});
+	};
+		
+	</script>
+
+</body>
+</html>

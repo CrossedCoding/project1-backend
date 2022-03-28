@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="eFunc.js"></script>
+
+<title>Home</title>
+</head>
+<body>
+
+	<div class="mobile-container">
+		<div class="topnav">
+			<a href="index.html" class="active">Bank</a>
+			<div id="myLinks">
+				<a href="index.html">Home</a> <a href="emp.html">Employee</a> <a
+					href="man.html">Manager</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+		<h1 style="text-align: center">Employee Info</h1>
+
+		<div style="text-align: center" id="formDiv">
+
+			<label for="userName">Username:</label> <input type="text"
+				id="userName" name="userName" class="form-control"><br>
+
+			<button type="submit" class="btn btn-primary" onclick="dispInfo()">Submit</button>
+			<br> 
+			
+			<label for="userId">Id:</label> <input type="text"
+				id="userId" name="userId" class="form-control"><br> <label
+				for="userFirst">First Name :</label> <input type="text"
+				id="userFirst" name="userFirst" class="form-control"><br>
+
+			<label for="userLast">Last Name:</label> <input type="text"
+				id="userLast" name="userLast" class="form-control"><br>
+
+			<label for="username">Username:</label> <input type="text"
+				id="username" name="username" class="form-control"><br>
+
+			<label for="pass">Password:</label> <input type="password" id="pass"
+				name="pass" class="form-control"><br> <label
+				for="userEmail">Email:</label> <input type="text" id="userEmail"
+				name="userEmail" class="form-control"><br>
+
+			<button type="submit" class="btn btn-primary" onclick="updateInfo()">Update
+			</button>
+			<br>
+
+		</div>
+
+	</div>
+
+	<script>
+		// Hamburger menu function
+		function myFunction() {
+			var x = document.getElementById("myLinks");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+
+		/* Script functions were put in eFunc.js because the buttons didn't work */
+	</script>
+
+</body>
+</html>
