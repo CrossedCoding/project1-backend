@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Request</title>
+</head>
+<body>
+
+	<div class="mobile-container">
+		<div class="topnav">
+			<a href="index.html" class="active">Fraud</a>
+			<div id="myLinks">
+				<a href="index.html">Home</a> <a href="emp.html">Employee</a> <a
+					href="man.html">Manager</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		<div style="text-align: center;">
+			<h2>Reimbursement Requests</h2>
+
+			<label for="empId">Employee Id: </label><br> <input type="text"
+				id="empId" class="form-control"><br> <label
+				for="Amount">Amount: </label><br> <input type="text"
+				id="amount" class="form-control"><br> <label
+				for="Description">Description: </label><br> <input type="text"
+				id="descript" name="descript" class="form-control"> <br>
+
+			<button type="submit" class="btn btn-primary" onclick="createRemb()">Submit</button>
+			<br>
+
+		</div>
+
+	</div>
+
+	<script>
+		// Hamburger menu function
+		function myFunction() {
+			var x = document.getElementById("myLinks");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+
+		// Request functions
+		async function createRemb() {
+
+			let amount = document.getElementById("amount").value;
+
+			let description = document.getElementById("descript").value
+
+			let empId = document.getElementById("empId").value
+
+			let rembInfo = {
+				amount : amount,
+				description : description,
+				author : empId
+			}
+
+			console.log(rembInfo);
+
+			let response = await
+			fetch(`/reimbursement`, {
+				method : "POST",
+				headers : {
+					'Content-Type' : 'application/json'
+				},
+				body : JSON.stringify(rembInfo)
+			});
+
+			if (response.status !== 200) {
+
+				//if login attempt fails
+				alert("Failed to Create New Request");
+			}
+
+			else {
+
+				alert("Request Created Successfully!")
+			}
+
+			console.log("Request complete! response:", response);
+
+		}
+	</script>
+
+</body>
+</html>

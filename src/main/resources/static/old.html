@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="eFunc.js"></script>
+<title>Oldies Only</title>
+</head>
+<body>
+
+	<div class="mobile-container">
+		<div class="topnav">
+			<a href="index.html" class="active">Bankee</a>
+			<div id="myLinks">
+				<a href="index.html">Home</a> <a href="emp.html">Employee</a> <a
+					href="man.html">Manager</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+		<h2 style="text-align: center">Reimbursement Requests</h2>
+
+		<div class="container" id="formDiv">
+
+			<label for="acctid">Employee ID:</label><br> 
+			<input type="text" id="acctId" name="acctId"
+				class="form-control"><br>
+
+
+			<button type="submit" class="btn btn-primary" onclick="empInfoById()">Submit</button>
+			<br>
+
+		</div>
+		<br>
+
+		<div id="formDiv">
+
+			<table id="table" class="table table-hover">
+				<thead>
+					<tr>
+
+						<th class="text-center">Id</th>
+						<th class="text-center">Amount</th>
+						<th class="text-center">Description</th>
+						<th class="text-center">Author</th>
+						<th class="text-center">Date Submitted</th>
+						<th class="text-center">Date Approved</th>
+						<th class="text-center">Resolver</th>
+						<th class="text-center">Status</th>
+						<th class="text-center">Type</th>
+					</tr>
+			</table>
+
+		</div>
+
+		<tbody id="idRembBody">
+
+		</tbody>
+
+	</div>
+
+	<script>
+		// Hamburger menu function
+		function myFunction() {
+			var x = document.getElementById("myLinks");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+		
+		// Get info
+
+		</script>
+
+</body>
+</html>
